@@ -10,6 +10,7 @@ interface IProps {
 const App: React.SFC<IProps> = ({}) => {
   return (
     <div className="a">
+      oo
       <Hello text="Electron" />
     </div>
   )

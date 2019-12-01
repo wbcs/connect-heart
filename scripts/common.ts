@@ -21,6 +21,27 @@ config.output
   .filename('[name].[hash].js')
   .end()
 
+config.module
+  .rule('images')
+  .test(/\.(png|jpe?g|gif|webp)(\?.*)?$/)
+  .use('url-loader')
+    .loader('url-loader')
+    .options({
+      limit: 5000,
+      name: 'images/[name].[hash:7].[ext]'
+    })
+    .end()
+
+config.module
+  .rule('svg')
+  .test(/\.(svg)$/)
+  .use('url-loader')
+    .loader('url-loader')
+    .options({
+      name: 'images/[name].[hash:7].[ext]'
+    })
+    .end()
+
 
 config.module
   .rule('less')
@@ -45,28 +66,6 @@ config.module
   .use('babel')
   .loader('babel-loader')
   .end()
-
-
-config.module
-  .rule('images')
-  .test(/\.(png|jpe?g|gif|webp)(\?.*)?$/)
-  .use('url-loader')
-    .loader('url-loader')
-    .options({
-      limit: 5000,
-      name: 'images/[name].[hash:7].[ext]'
-    })
-    .end()
-
-config.module
-  .rule('svg')
-  .test(/\.(svg)$/)
-  .use('url-loader')
-    .loader('url-loader')
-    .options({
-      name: 'images/[name].[hash:7].[ext]'
-    })
-    .end()
 
 config.plugin('html-webpack-plugin')
   .use(HtmlWebpackPlugin, [{

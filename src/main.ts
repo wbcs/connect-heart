@@ -18,12 +18,9 @@ function createWindow() {
     }
   })
 
-  // 加载应用的 index.html
-  // const indexPageURL = `file://${__dirname}/dist/index.html`;
   const indexPageURL = 'http://localhost:8080'
   win.loadURL(indexPageURL);
 
-  // 当 window 被关闭，这个事件会被触发
   win.on('closed', () => {
     // 取消引用 window 对象
     win = null
@@ -34,7 +31,6 @@ function createWindow() {
 // Electron 会在创建浏览器窗口时调用这个函数。
 app.on('ready', createWindow)
 
-// 当全部窗口关闭时退出
 app.on('window-all-closed', () => {
   // 在 macOS 上，除非用户用 Cmd + Q 确定地退出
   // 否则绝大部分应用会保持激活
@@ -42,3 +38,28 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
+
+
+// "build": {
+//   "productName": "wb-electron",
+//   "appId": "wbingcs",
+//   "directories": {
+//     "output": "dist"
+//   },
+//   "copyright": "wbingcs",
+//   "dmg": {
+//     "contents": [
+//       {
+//         "x": 410,
+//         "y": 150,
+//         "type": "link",
+//         "path": "/Applications"
+//       },
+//       {
+//         "x": 130,
+//         "y": 150,
+//         "type": "file"
+//       }
+//     ]
+//   }
+// }
