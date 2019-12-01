@@ -1,7 +1,7 @@
 import * as merge from 'webpack-merge'
 import * as WebpackChain from 'webpack-chain'
 import * as FriendlyErrorsWebapckPlugin from 'friendly-errors-webpack-plugin'
-import common from './index'
+import common from './common'
 import { Configuration } from 'webpack'
 
 const config: WebpackChain = new WebpackChain()

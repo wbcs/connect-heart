@@ -1,15 +1,19 @@
 {
   "compilerOptions": {
-    "module": "system",
-    "noImplicitAny": true,
+    "baseUrl": ".",
+    "outDir": "dist",
+    "jsx": "react",
+    "sourceMap": true,
     "removeComments": true,
     "preserveConstEnums": true,
-    "outDir": "dist",
-    "sourceMap": true,
-    "jsx": "react",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": [
-    "src/**/*"
+    "src/**/*",
+    "scripts/**/*",
+    "global.d.ts",
   ],
   "exclude": [
     "node_modules",

@@ -1,6 +1,6 @@
 import * as merge from 'webpack-merge'
 import * as WebapckChain from 'webpack-chain'
-import common from './index'
+import common from './common'
 import { Configuration } from 'webpack'
 
 
