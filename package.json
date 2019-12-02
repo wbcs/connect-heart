@@ -5,6 +5,11 @@
   "main": "src/main.ts",
   "author": "wbingcs",
   "license": "ISC",
+  "keywords": [
+    "react",
+    "electron",
+    "typescript"
+  ],
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.7.4",
     "@babel/plugin-proposal-decorators": "^7.7.4",
@@ -20,17 +25,24 @@
     "@types/webpack": "^4.41.0",
     "@types/webpack-chain": "^5.2.0",
     "@types/webpack-merge": "^4.1.5",
+    "@typescript-eslint/eslint-plugin": "^2.9.0",
+    "@typescript-eslint/parser": "^2.9.0",
+    "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
     "electron": "^7.1.2",
     "electron-builder": "^21.2.0",
+    "eslint": "^6.7.2",
     "file-loader": "^5.0.2",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^3.1.0",
     "less": "^3.10.3",
     "less-loader": "^5.0.0",
+    "lint-staged": "^9.5.0",
     "mini-css-extract-plugin": "^0.8.0",
+    "prettier": "^1.19.1",
     "style-loader": "^1.0.1",
     "styled-jsx": "^3.2.4",
     "ts-node": "^8.5.4",
@@ -54,8 +66,21 @@
     "build": "npm run build-web",
     "start": "electron src/main.ts"
   },
-  "keywords": [
-    "electron",
-    "react"
-  ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "{src,scripts}/**/**.{jsx,js}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ],
+    "{src,scripts}/**/**.{tsx,ts}": [
+      "prettier --parser=typescript --write",
+      "eslint --fix",
+      "git add"
+    ]
+  }
 }
