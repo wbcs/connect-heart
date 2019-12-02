@@ -16,6 +16,6 @@
     "no-useless-constructor": 2,
     "no-useless-rename": 2,
     "no-var": 2,
-    "sort-imports": 1
+    "sort-keys": 1
   }
 }

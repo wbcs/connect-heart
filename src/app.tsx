@@ -9,6 +9,11 @@ interface IProps {}
 class App extends React.Component<IProps, {}> {
   render() {
     let a = '2'
+    let obj = {
+      b: 1,
+      awadj: 'wefw'
+    }
+
     return (
       <div className="a">
         oo0 <Hello text="Electron" />
