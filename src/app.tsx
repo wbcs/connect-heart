@@ -19,7 +19,7 @@ class App extends React.Component<IProps, {}> {
       b: 1,
       awadj: 'wefw'
     }
-
+    console.log(a == obj)
     return (
       <div className="a">
         oo0 <Hello text="Electron" />

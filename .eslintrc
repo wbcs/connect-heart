@@ -21,6 +21,7 @@
       "const": "never"
     }],
     "sort-keys": 1,
-    "prefer-destructuring": 2
+    "prefer-destructuring": 2,
+    "no-eq-null": 2
   }
 }
