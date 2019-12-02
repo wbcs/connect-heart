@@ -20,6 +20,7 @@
       "let": "never",
       "const": "never"
     }],
-    "sort-keys": 1
+    "sort-keys": 1,
+    "prefer-destructuring": 2
   }
 }
