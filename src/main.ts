@@ -1,15 +1,12 @@
-const {
-  app,
-  BrowserWindow
-} = require('electron')
+// import * as path from 'path'
+import { app, BrowserWindow } from 'electron'
 
 // 保持一个对于 window 对象的全局引用，如果你不这样做，
 // 当 JavaScript 对象被垃圾回收， window 会被自动地关闭
-let win
+let win: BrowserWindow
 
 // 打开主窗口
 function createWindow() {
-  // 创建浏览器窗口
   win = new BrowserWindow({
     width: 800,
     height: 600,
@@ -38,28 +35,3 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
-
-
-// "build": {
-//   "productName": "wb-electron",
-//   "appId": "wbingcs",
-//   "directories": {
-//     "output": "dist"
-//   },
-//   "copyright": "wbingcs",
-//   "dmg": {
-//     "contents": [
-//       {
-//         "x": 410,
-//         "y": 150,
-//         "type": "link",
-//         "path": "/Applications"
-//       },
-//       {
-//         "x": 130,
-//         "y": 150,
-//         "type": "file"
-//       }
-//     ]
-//   }
-// }

@@ -48,9 +48,9 @@ config.module
 
 config.module
   .rule('less')
-  .test(/\.less$/)
+  .test(/\.(less|css)$/)
   .use('mini-css-extract-loader')
-    .loader(__DEV__ ? MiniCssExtractPlugin.loader : 'style-loader')
+    .loader(__DEV__ ? 'style-loader' : MiniCssExtractPlugin.loader)
     .end()
   .use('css-loader')
     .loader('css-loader')

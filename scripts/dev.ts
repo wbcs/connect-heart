@@ -1,7 +1,8 @@
 import * as merge from 'webpack-merge'
 import * as WebpackChain from 'webpack-chain'
+import * as MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import * as FriendlyErrorsWebapckPlugin from 'friendly-errors-webpack-plugin'
-import common from './common'
+import base from './base'
 import { Configuration } from 'webpack'
 
 const config: WebpackChain = new WebpackChain()
@@ -9,6 +10,12 @@ const config: WebpackChain = new WebpackChain()
 config
   .mode('development')
   .stats('none')
+  .end()
+
+config.plugin('min-cess-extract-plugin')
+  .use(MiniCssExtractPlugin, [{
+    filename: '[css]/[name].css',
+  }])
   .end()
 
 config.plugin('friendly-errors-webpack-plugin')
@@ -21,4 +28,4 @@ config.plugin('friendly-errors-webpack-plugin')
   }])
   .end()
 
-export default merge(common, config.toConfig()) as Configuration
+export default merge(base, config.toConfig()) as Configuration
