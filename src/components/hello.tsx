@@ -5,5 +5,6 @@ interface IProps {
 }
 
 export default function(props: IProps) {
-  return <div>Hello {props.text}!</div>
+  let {text} = props
+  return <div>Hello {text}!</div>
 }
