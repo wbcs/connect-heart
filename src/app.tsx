@@ -10,8 +10,7 @@ const App: React.SFC<IProps> = ({}) => {
   var a = '2'
   return (
     <div className='a'>
-      oo0
-      <Hello text='Electron' />
+      oo0 <Hello text='Electron' />
     </div>
   )
 }
