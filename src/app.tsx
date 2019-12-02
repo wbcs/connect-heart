@@ -7,12 +7,8 @@ import './index.less'
 interface IProps {}
 
 class App extends React.Component<IProps, {}> {
-  constructor(props) {
-    super(props)
-    this.state = {}
-  }
   render() {
-    var a = '2'
+    let a = '2'
     return (
       <div className="a">
         oo0 <Hello text="Electron" />
