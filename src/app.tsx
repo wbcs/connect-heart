@@ -7,19 +7,7 @@ import './index.less'
 interface IProps {}
 
 class App extends React.Component<IProps, {}> {
-  componentDidMount() {
-    this.test()
-  }
-  test = () => {
-    console.log('test')
-  }
   render() {
-    let a = '2'
-    let obj = {
-      b: 1,
-      awadj: 'wefw'
-    }
-    console.log(a == obj)
     return (
       <div className="a">
         oo0 <Hello text="Electron" />

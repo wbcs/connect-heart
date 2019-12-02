@@ -1,9 +1,10 @@
 {
 
-  "parser": "@typescript-eslint/parser", //定义ESLint的解析器
-  "plugins": ["@typescript-eslint"], //定义了该eslint文件所依赖的插件
-  "env": { //指定代码的运行环境
-    "browser": true
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint", "react"],
+  "env": {
+    "browser": true,
+    "node": true,
   },
   "parserOptions": {
     "ecmaVersion": 6,
@@ -22,6 +23,10 @@
     }],
     "sort-keys": 1,
     "prefer-destructuring": 2,
-    "no-eq-null": 2
+    "eqeqeq": 2,
+    "for-direction": 2,
+    "no-unused-vars": 2,
+    "react/jsx-uses-react": 2,
+    "react/jsx-uses-vars": 2
   }
 }
