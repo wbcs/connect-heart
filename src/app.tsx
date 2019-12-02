@@ -8,8 +8,8 @@ interface IProps {}
 
 class App extends React.Component<IProps, {}> {
   render() {
-    let a = '2',
-      obj = {
+    let a = '2';
+      let obj = {
         b: 1,
         awadj: 'wefw'
       }

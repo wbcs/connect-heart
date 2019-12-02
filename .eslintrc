@@ -16,7 +16,10 @@
     "no-useless-constructor": 2,
     "no-useless-rename": 2,
     "no-var": 2,
-    "one-var": 2,
+    "one-var": [2, {
+      "let": "never",
+      "const": "never"
+    }],
     "sort-keys": 1
   }
 }
