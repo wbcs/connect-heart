@@ -7,6 +7,9 @@ import './index.less'
 interface IProps {}
 
 class App extends React.Component<IProps, {}> {
+  test = () => {
+    console.log('test')
+  }
   render() {
     return (
       <div className="a">
