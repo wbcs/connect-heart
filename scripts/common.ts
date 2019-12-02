@@ -3,7 +3,7 @@ import * as WebapckChain from 'webpack-chain'
 import * as HtmlWebpackPlugin from 'html-webpack-plugin'
 import * as MiniCssExtractPlugin from 'mini-css-extract-plugin'
 import {
-  Configuration
+  Configuration as IConfiguration
 } from 'webpack'
 
 const __DEV__ = process.env.NODE_ENV === 'development'
@@ -27,21 +27,24 @@ config.module
   .use('url-loader')
     .loader('url-loader')
     .options({
-      limit: 5000,
+      limit: 1024,
       name: 'images/[name].[hash:7].[ext]'
     })
     .end()
 
+/**
+ * svg不适用inline
+ * inline的svg会破坏svg片段标识符，它被用在雪碧图当中
+ */
 config.module
   .rule('svg')
-  .test(/\.(svg)$/)
-  .use('url-loader')
-    .loader('url-loader')
+  .test(/\.svg$/)
+  .use('file-loader')
+    .loader('file-loader')
     .options({
       name: 'images/[name].[hash:7].[ext]'
     })
     .end()
-
 
 config.module
   .rule('less')
@@ -58,7 +61,7 @@ config.module
 
 config.module
   .rule('compile')
-  .test(/\.(tsx)|(jsx)|(ts)|(js)$/)
+  .test(/\.(tsx|jsx|ts|js)$/)
   .pre()
   .include
     .add(path.resolve(__dirname, '../src'))
@@ -73,7 +76,6 @@ config.plugin('html-webpack-plugin')
   }])
   .end()
 
-
 config.resolve
   .alias
     .set('@', path.resolve(__dirname, '../src'))
@@ -85,4 +87,4 @@ config.resolve
     .add('.js')
     .end()
 
-export default config.toConfig() as Configuration
+export default config.toConfig() as IConfiguration
