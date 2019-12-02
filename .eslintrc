@@ -11,5 +11,8 @@
     "ecmaFeatures": {
       "modules": true
     }
+  },
+  "rules": {
+    "no-useless-constructor": 2
   }
 }
