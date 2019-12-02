@@ -4,7 +4,7 @@
   "plugins": ["@typescript-eslint", "react"],
   "env": {
     "browser": true,
-    "node": true,
+    "node": true
   },
   "parserOptions": {
     "ecmaVersion": 6,
