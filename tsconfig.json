@@ -7,7 +7,7 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/render/*"]
     }
   },
   "include": [

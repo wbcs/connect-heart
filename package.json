@@ -2,7 +2,7 @@
   "name": "wb-electron",
   "version": "1.0.0",
   "description": "",
-  "main": "src/main.ts",
+  "main": "src/main/index.js",
   "author": "wbingcs",
   "license": "ISC",
   "keywords": [
@@ -31,7 +31,6 @@
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "css-loader": "^3.2.0",
-    "electron": "^7.1.2",
     "electron-builder": "^21.2.0",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.1.1",
@@ -58,6 +57,8 @@
   },
   "dependencies": {
     "@babel/core": "^7.7.4",
+    "antd": "^3.26.4",
+    "electron": "^7.1.7",
     "react": "^16.12.0",
     "react-dom": "^16.12.0"
   },
@@ -66,7 +67,7 @@
     "build-web": "webpack --config scripts/build.ts",
     "build-mac": "electron-builder --mac --config build.yml",
     "build": "npm run build-web",
-    "start": "electron src/main.ts"
+    "start": "NODE_ENV=development electron src/main/index.js"
   },
   "husky": {
     "hooks": {
