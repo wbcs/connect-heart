@@ -12,8 +12,8 @@ const createWindow = () => {
     titleBarStyle: 'hiddenInset',
     webPreferences: {
       nodeIntegration: true,
-      webviewTag: true,
-      devTools: true
+      webviewTag: true
+      // devTools: true
     }
   })
 }
