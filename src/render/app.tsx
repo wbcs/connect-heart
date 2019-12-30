@@ -1,28 +1,34 @@
 import * as React from 'react'
 import * as ReactDOM from 'react-dom'
-
-import Header from '@/components/header'
-
-import { Button } from 'antd'
-
-import 'antd/dist/antd.css'
+import { Aside, Header, Chat } from '@/components'
 
 interface IProps {}
 
 const App: React.FC<IProps> = () => {
-  const handleClick = () => {
-    const noti = new Notification('title', {
-      body: 'fuck you'
-    })
-    noti.onclick = () => {
-      console.log('oooo')
-    }
-  }
-
   return (
-    <div>
-      <Header />
-      <Button onClick={handleClick}>click me</Button>
+    <div className="app">
+      <div>
+        <Header />
+      </div>
+      <div className="body-container">
+        <Aside />
+        <Chat />
+      </div>
+      <style jsx>
+        {`
+          .app {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            box-sizing: border-box;
+          }
+          .body-container {
+            flex: 1;
+            display: flex;
+            overflow: auto;
+          }
+        `}
+      </style>
     </div>
   )
 }

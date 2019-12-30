@@ -9,7 +9,7 @@ const createWindow = () => {
   window = new BrowserWindow({
     width: 800,
     height: 600,
-    titleBarStyle: 'hiddenInset',
+    // titleBarStyle: 'hiddenInset',
     webPreferences: {
       nodeIntegration: true,
       webviewTag: true
