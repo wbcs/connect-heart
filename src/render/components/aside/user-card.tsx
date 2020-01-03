@@ -29,10 +29,13 @@ const UserCard: React.SFC<IProps> = ({
       data-id={id}
       onClick={onClick}
     >
-      <div className="avatar-container">
-        <Avatar size="large" src={avatar} />
-      </div>
-      <Badge count={count} overflowCount={99} offset={[-15, 30]}>
+      <Avatar src={avatar} />
+      <Badge
+        count={count}
+        overflowCount={99}
+        offset={[-10, 30]}
+        style={{ transform: 'scale(0.8)' }}
+      >
         <div className="msg-block">
           <div className="title">
             <span>{name}</span>
@@ -41,6 +44,13 @@ const UserCard: React.SFC<IProps> = ({
           <div className="msg">{msg}</div>
         </div>
       </Badge>
+      <style jsx global>
+        {`
+          .user-card .ant-badge {
+            flex: 1;
+          }
+        `}
+      </style>
       <style jsx>
         {`
           .checked {
@@ -50,14 +60,10 @@ const UserCard: React.SFC<IProps> = ({
           .user-card {
             display: flex;
             align-items: center;
-            padding: 1em 0.5em;
-          }
-          .avatar-container {
+            padding: 1em 0.5em 1em 1em;
           }
           .msg-block {
             padding: 0.2em 0.5em;
-            flex: 1;
-            justify-content: center;
           }
           .title {
             display: flex;
@@ -65,7 +71,10 @@ const UserCard: React.SFC<IProps> = ({
           }
           .title span:first-child {
             color: black;
-            font-size: 1.1em;
+          }
+          .title span:last-child {
+            margin-right: 1em;
+            font-size: 0.7em;
           }
           .msg {
             width: 95%;

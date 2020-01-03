@@ -1,68 +1,17 @@
 import * as React from 'react'
 import UserCard from './user-card'
+import ResizeBar from '../resize-bar'
 
-const data = [
-  {
-    id: '1',
-    avatar:
-      'https://avatars3.githubusercontent.com/u/33517328?s=400&u=825ace2cce87e02a925951a45336ee044eea34b9&v=4',
-    name: 'Bruce',
-    time: 1577697501589,
-    status: false,
-    count: 3,
-    msg: '234'
-  },
-  {
-    id: '2',
-    avatar:
-      'https://avatars3.githubusercontent.com/u/33517328?s=400&u=825ace2cce87e02a925951a45336ee044eea34b9&v=4',
-    name: 'Bruce',
-    time: 1577697501589,
-    status: false,
-    count: 3,
-    msg: '234'
-  },
-  {
-    id: '3',
-    avatar:
-      'https://avatars3.githubusercontent.com/u/33517328?s=400&u=825ace2cce87e02a925951a45336ee044eea34b9&v=4',
-    name: 'Bruce',
-    time: 1577697501589,
-    status: false,
-    count: 3,
-    msg: '234'
-  },
-  {
-    id: '4',
-    avatar:
-      'https://avatars3.githubusercontent.com/u/33517328?s=400&u=825ace2cce87e02a925951a45336ee044eea34b9&v=4',
-    name: 'Bruce',
-    time: 1577697501589,
-    status: false,
-    count: 3,
-    msg: '234'
-  },
-  {
-    id: '5',
-    avatar:
-      'https://avatars3.githubusercontent.com/u/33517328?s=400&u=825ace2cce87e02a925951a45336ee044eea34b9&v=4',
-    name: 'Bruce',
-    time: 1577697501589,
-    status: false,
-    count: 3,
-    msg: '234'
-  },
-  {
-    id: '6',
-    avatar:
-      'https://avatars3.githubusercontent.com/u/33517328?s=400&u=825ace2cce87e02a925951a45336ee044eea34b9&v=4',
-    name: 'Bruce',
-    time: 1577697501589,
-    status: false,
-    count: 3,
-    msg: '234'
-  }
-]
+const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => ({
+  id: String(num),
+  avatar:
+    'https://avatars3.githubusercontent.com/u/33517328?s=400&u=825ace2cce87e02a925951a45336ee044eea34b9&v=4',
+  name: 'Bruce' + num,
+  time: 1577697501589,
+  status: false,
+  count: num,
+  msg: '234'
+}))
 
 const Aside = () => {
   const [checkedId, setCheckedId] = React.useState<string>()
@@ -70,6 +19,7 @@ const Aside = () => {
     const { id } = e.currentTarget.dataset
     setCheckedId(id)
   }
+  const handleResize = () => {}
   return (
     <aside>
       {data.map(item => (
@@ -80,13 +30,14 @@ const Aside = () => {
           onClick={handleClick}
         />
       ))}
+      <ResizeBar onResize={handleResize} />
       <style jsx>
         {`
           aside {
-            overflow: scroll;
-            min-width: 210px;
+            position: relative;
             height: 100%;
-            border-right: 1px solid #eef;
+            min-width: 230px;
+            overflow: scroll;
             user-select: none;
           }
         `}
