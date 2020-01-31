@@ -39,4 +39,6 @@ app.once('ready', () => {
   window.once('closed', () => (window = null))
 })
 
+process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = true
+
 app.on('window-all-closed', () => app.quit())
