@@ -16,6 +16,10 @@
     "@babel/plugin-syntax-dynamic-import",
     ["styled-jsx/babel", {
       "optimizeForSpeed": true
+    }],
+    ["babel-plugin-import", {
+      "libraryName": "antd",
+      "style": "css"
     }]
   ]
 }
