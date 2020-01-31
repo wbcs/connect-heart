@@ -1,5 +1,4 @@
 import * as React from 'react'
-import * as ReactDOM from 'react-dom'
 import { Aside, Header, ChatRecord, Edit } from '@/components'
 
 interface IProps {}
@@ -42,6 +41,4 @@ const App: React.FC<IProps> = () => {
   )
 }
 
-export default () => {
-  ReactDOM.render(<App />, document.querySelector('#root'))
-}
+export default App

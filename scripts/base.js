@@ -10,7 +10,7 @@ const config = new WebapckChain()
 config
   .context(path.resolve(__dirname, '../'))
   .entry('app')
-  .add('./src/render/index.ts')
+  .add('./src/render/index.tsx')
   .end()
 
 config.output
