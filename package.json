@@ -63,8 +63,8 @@
     "react-dom": "^16.12.0"
   },
   "scripts": {
-    "dev": "webpack-dev-server --progress --open --config scripts/dev.ts",
-    "build-web": "webpack --config scripts/build.ts",
+    "dev": "webpack-dev-server --progress --open --config scripts/dev.js",
+    "build-web": "webpack --config scripts/build.js",
     "build-mac": "electron-builder --mac --config build.yml",
     "build": "npm run build-web",
     "start": "NODE_ENV=development electron src/main/index.js"

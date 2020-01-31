@@ -1,11 +1,11 @@
-import * as path from 'path'
-import * as WebapckChain from 'webpack-chain'
-import * as HtmlWebpackPlugin from 'html-webpack-plugin'
-import * as MiniCssExtractPlugin from 'mini-css-extract-plugin'
+const path = require('path')
+const WebapckChain = require('webpack-chain')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const __DEV__ = process.env.NODE_ENV === 'development'
 
-const config: WebapckChain = new WebapckChain()
+const config = new WebapckChain()
 
 config
   .context(path.resolve(__dirname, '../'))
@@ -84,4 +84,4 @@ config.resolve.alias
   .add('.js')
   .end()
 
-export default config.toConfig()
+module.exports = config.toConfig()
