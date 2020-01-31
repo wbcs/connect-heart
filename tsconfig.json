@@ -7,6 +7,8 @@
     "removeComments": true,
     "preserveConstEnums": true,
     "noUnusedParameters": true,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
     "paths": {
       "@/*": ["src/render/*"]
     }
