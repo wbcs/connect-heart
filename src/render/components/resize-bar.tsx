@@ -1,21 +1,22 @@
-import * as React from 'react'
+import React, { useEffect, useCallback } from 'react'
 
 interface IProps {
-  onResize: () => void
+  onResize: (e: MouseEvent) => void
 }
 
 const ResizeBar: React.SFC<IProps> = ({ onResize }) => {
-  const handleMouseDown = () => {
-    onResize
-  }
-  const handleMouseUp = () => {}
+  const handleWindowMouseMove = useCallback(onResize, [])
+  const handleMouseDown = () =>
+    window.addEventListener('mousemove', handleWindowMouseMove)
+  useEffect(() => {
+    const handleWindowMouseUp = () =>
+      window.removeEventListener('mousemove', handleWindowMouseMove)
+    window.addEventListener('mouseup', handleWindowMouseUp)
+    return () => window.removeEventListener('mouseup', handleWindowMouseUp)
+  }, [])
 
   return (
-    <div
-      className="resize-bar"
-      onMouseDown={handleMouseDown}
-      onMouseUp={handleMouseUp}
-    >
+    <div className="resize-bar" onMouseDown={handleMouseDown}>
       <style jsx>
         {`
           .resize-bar {

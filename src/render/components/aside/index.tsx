@@ -1,11 +1,11 @@
-import * as React from 'react'
+import React, { useRef } from 'react'
 import UserCard from './user-card'
 import ResizeBar from '../resize-bar'
 
 const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => ({
   id: String(num),
   avatar:
-    'https://avatars3.githubusercontent.com/u/33517328?s=400&u=825ace2cce87e02a925951a45336ee044eea34b9&v=4',
+    'https://pic2.zhimg.com/v2-084ee842527ce35ae5424c81c6bce094_im.jpg',
   name: 'Bruce' + num,
   time: 1577697501589,
   status: false,
@@ -14,14 +14,18 @@ const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => ({
 }))
 
 const Aside = () => {
+  const asideRef = useRef<HTMLElement>()
   const [checkedId, setCheckedId] = React.useState<string>()
-  const handleClick = e => {
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
     const { id } = e.currentTarget.dataset
     setCheckedId(id)
   }
-  const handleResize = () => {}
+  const handleResize = (e: MouseEvent) => {
+    asideRef.current.style.width = `${e.clientX}px`
+  }
+
   return (
-    <aside>
+    <aside ref={asideRef}>
       {data.map(item => (
         <UserCard
           key={item.id}
@@ -35,8 +39,10 @@ const Aside = () => {
         {`
           aside {
             position: relative;
+            width: 200px;
             height: 100%;
-            min-width: 230px;
+            min-width: 150px;
+            max-width: 300px;
             overflow: scroll;
             user-select: none;
           }

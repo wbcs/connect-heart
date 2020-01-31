@@ -17,7 +17,7 @@ const Header: React.FC<IProps> = () => {
         <Col span={8} style={{ textAlign: 'right' }}>
           <div className="avatar-block">
             <Badge status="success">
-              <Avatar src="https://avatars3.githubusercontent.com/u/33517328?s=400&u=825ace2cce87e02a925951a45336ee044eea34b9&v=4" />
+              <Avatar src="https://pic2.zhimg.com/v2-084ee842527ce35ae5424c81c6bce094_im.jpg" />
             </Badge>
           </div>
         </Col>
