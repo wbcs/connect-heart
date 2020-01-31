@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { NavLink } from 'react-router-dom'
 import { Avatar, Icon, Row, Col, Badge } from 'antd'
 
 interface IProps {}
@@ -10,8 +11,12 @@ const Header: React.FC<IProps> = () => {
         <Col span={8}></Col>
         <Col span={8} style={{ textAlign: 'center' }}>
           <div className="icon-container">
-            <Avatar icon={<Icon type="bell" theme="twoTone" />} />
-            <Avatar icon={<Icon type="bell" theme="twoTone" />} />
+            <NavLink to="/">
+              <Avatar icon={<Icon type="bell" theme="twoTone" />} />
+            </NavLink>
+            <NavLink to="/relation-ship">
+              <Avatar icon={<Icon type="bell" theme="twoTone" />} />
+            </NavLink>
           </div>
         </Col>
         <Col span={8} style={{ textAlign: 'right' }}>
@@ -22,6 +27,7 @@ const Header: React.FC<IProps> = () => {
           </div>
         </Col>
       </Row>
+
       <style jsx>
         {`
           .header-block {

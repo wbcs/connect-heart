@@ -84,4 +84,6 @@ config.resolve.alias
   .add('.js')
   .end()
 
+config.devServer.set('historyApiFallback', true).end()
+
 module.exports = config.toConfig()
