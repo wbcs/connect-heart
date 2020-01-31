@@ -1,5 +1,8 @@
 import * as React from 'react'
-import { Aside, Header, ChatRecord, Edit } from '@/components'
+import Aside from './aside'
+import Header from './header'
+import ChatRecord from './chat-record'
+import Edit from './edit'
 
 interface IProps {}
 
