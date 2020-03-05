@@ -6,11 +6,11 @@ const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(num => ({
   id: String(num),
   avatar:
     'https://pic2.zhimg.com/v2-084ee842527ce35ae5424c81c6bce094_im.jpg',
-  name: 'Bruce' + num,
+  name: 'hehe' + num,
   time: 1577697501589,
   status: false,
   count: num,
-  msg: '234'
+  msg: '2'
 }))
 
 const Aside = () => {
@@ -41,9 +41,10 @@ const Aside = () => {
             position: relative;
             width: 200px;
             height: 100%;
-            min-width: 150px;
+            min-width: 200px;
             max-width: 300px;
-            overflow: scroll;
+            overflow-y: scroll;
+            overflow-x: hidden;
             user-select: none;
           }
         `}

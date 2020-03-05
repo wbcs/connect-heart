@@ -29,7 +29,7 @@ const UserCard: React.SFC<IProps> = ({
       data-id={id}
       onClick={onClick}
     >
-      <Avatar src={avatar} />
+      <Avatar style={{ flexShrink: 0 }} src={avatar} />
       <Badge
         count={count}
         overflowCount={99}
@@ -71,8 +71,10 @@ const UserCard: React.SFC<IProps> = ({
           }
           .title span:first-child {
             color: black;
+            text-overflow: ellipsis;
           }
           .title span:last-child {
+            white-space: nowrap;
             margin-right: 1em;
             font-size: 0.7em;
           }
