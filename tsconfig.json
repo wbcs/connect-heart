@@ -9,6 +9,7 @@
     "noUnusedParameters": true,
     "noImplicitAny": true,
     "esModuleInterop": true,
+    "noImplicitThis": true,
     "paths": {
       "@/*": ["src/render/*"]
     }
